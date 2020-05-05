@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class deathbox : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) 
     {
-        Application.LoadLevel(Application.loadedLevel); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
      }
 }
