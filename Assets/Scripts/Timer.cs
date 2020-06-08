@@ -6,33 +6,28 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public Text timerText;
-    private float startTime;
-    private bool finished = false;
-
-    // Start is called before the first frame update
-    void Start()
+    bool started = false;
+    private float timeStart;
+    
+    void start()
     {
-        
-        startTime = Time.time;
-
+        timerText.text = timeStart.ToString("F2");
     }
-
     // Update is called once per frame
     void Update()
     {
-        if(finished)
-            return;
-
-        float t = Time.time - startTime;
-
-        string minuites = ((int) t / 60).ToString();
-        string seconds = ( t % 60).ToString("f2");
-
-        timerText.text = minuites + ":" + seconds;
+        if(started == true){
+            timeStart += Time.deltaTime;
+            timerText.text = timeStart.ToString("F2");
+        }
     }
 
     public void Finish()
     {
-        finished = true;
+        started = false;
+    }
+    public void Start()
+    {
+        started = true;
     }
 }
