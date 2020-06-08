@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoadSceneOnClick : MonoBehaviour {
-    public void LoadScene(string SampleScene)
+    public void LoadScene(string Scene)
     {
-        SceneManager.LoadScene(SampleScene);
+        SceneManager.LoadScene(Scene);
     }
 }
