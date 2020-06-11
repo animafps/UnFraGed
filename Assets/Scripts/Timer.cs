@@ -9,14 +9,14 @@ public class Timer : MonoBehaviour
     bool started = false;
     private float timeStart;
     
-    void start()
+    void start ()
     {
-        timerText.text = timeStart.ToString("F2");
+
     }
-    // Update is called once per frame
-    void Update()
-    {
-        if(started == true){
+    void Update () {
+        if(!started)
+            return;
+        else if(started){
             timeStart += Time.deltaTime;
             timerText.text = timeStart.ToString("F2");
         }
