@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Settings : MonoBehaviour
 {
-    public void SetSens (string sensitivity)
+    public string sensitivityInput;
+
+    public void SetSens ()
     {
-        Debug.Log(sensitivity);
+        float Sens = float.Parse(sensitivityInput);
+        Debug.Log(Sens);
     }
 }
