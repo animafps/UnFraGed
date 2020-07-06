@@ -31,7 +31,7 @@ public class CPMPlayer : MonoBehaviour
     public float sideStrafeAcceleration = 50.0f;  // How fast acceleration occurs to get up to sideStrafeSpeed when
     public float sideStrafeSpeed = 1.0f;          // What the max speed to generate when side strafing
     public float jumpSpeed = 8.0f;                // The speed at which the character's up axis gains when hitting jump
-    public bool holdJumpToBhop = false;           // When enabled allows player to just hold jump button to keep on bhopping perfectly. Beware: smells like casual.
+    public bool holdJumpToBhop = true;           // When enabled allows player to just hold jump button to keep on bhopping perfectly. Beware: smells like casual.
 
     /*print() style */
     public GUIStyle style;

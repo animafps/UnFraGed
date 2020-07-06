@@ -8,5 +8,12 @@ public class deathbox : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-     }
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 }
