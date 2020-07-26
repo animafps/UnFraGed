@@ -6,7 +6,7 @@ public class start : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        GameObject.Find("_Player").SendMessage("Start");
+        GameObject.Find("_Player").SendMessage("Begin");
     }
     
 }

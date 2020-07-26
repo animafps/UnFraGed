@@ -13,8 +13,8 @@ public class CPMPlayer : MonoBehaviour
 {
     public Transform playerView;     // Camera
     public float playerViewYOffset = 0.6f; // The height at which the camera is bound to
-    public float xMouseSensitivity = 30.0f;
-    public float yMouseSensitivity = 30.0f;
+    public float xMouseSensitivity;
+    public float yMouseSensitivity;
 //
     /*Frame occuring factors*/
     public float gravity = 20.0f;
@@ -31,7 +31,7 @@ public class CPMPlayer : MonoBehaviour
     public float sideStrafeAcceleration = 50.0f;  // How fast acceleration occurs to get up to sideStrafeSpeed when
     public float sideStrafeSpeed = 1.0f;          // What the max speed to generate when side strafing
     public float jumpSpeed = 8.0f;                // The speed at which the character's up axis gains when hitting jump
-    public bool holdJumpToBhop = true;           // When enabled allows player to just hold jump button to keep on bhopping perfectly. Beware: smells like casual.
+    public bool holdJumpToBhop = false;           // When enabled allows player to just hold jump button to keep on bhopping perfectly. Beware: smells like casual.
 
     /*print() style */
     public GUIStyle style;
@@ -64,7 +64,9 @@ public class CPMPlayer : MonoBehaviour
 
     private void Start()
     {
-        // Hide the cursor
+        xMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f);
+        yMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f);
+        // Hide the cursor 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
