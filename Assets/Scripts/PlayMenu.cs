@@ -7,7 +7,7 @@ using TMPro;
 public class PlayMenu : MonoBehaviour
 {
     public TMP_Text level1Time;
-    float m_time;
+    float level1;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class PlayMenu : MonoBehaviour
 
     void Update()
     {
-        level1Time.text = "Fastest Time: " + m_time.ToString("F2");
+        level1Time.text = "Fastest Time:" + level1.ToString("F2");
     }
 
     public void PlayGame ()
@@ -26,6 +26,6 @@ public class PlayMenu : MonoBehaviour
 
     void SetText()
     {
-        m_time = PlayerPrefs.GetFloat("Time In Seconds:", 0);
+        level1 = PlayerPrefs.GetFloat("1", 0);
     }
 }

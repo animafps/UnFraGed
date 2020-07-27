@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Timer : MonoBehaviour
     public TMP_Text fastTime;
     public GameObject IngameOverlay;
     public GameObject FinishScreen;
+    string levelNum;
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class Timer : MonoBehaviour
         started = false;
         if((m_time >= timeStart) && (timeStart > 0))  
         {
-            PlayerPrefs.SetFloat("Time In Seconds:", timeStart);
+            PlayerPrefs.SetFloat(levelNum, timeStart);
         }
         IngameOverlay.SetActive(false);
         FinishScreen.SetActive(true);
@@ -48,7 +50,8 @@ public class Timer : MonoBehaviour
 
     void SetText()
     {
-        m_time = PlayerPrefs.GetFloat("Time In Seconds:", 0);
+        levelNum = SceneManager.GetActiveScene().buildIndex.ToString("10");
+        m_time = PlayerPrefs.GetFloat(levelNum, 0);
     }
 
     public void Pause()
