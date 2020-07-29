@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public TMP_Text timerText;
-    bool started = false;
+    public bool started = false;
     float timeStart;
     float m_time;
     public TMP_Text fastTime;
