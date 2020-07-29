@@ -34,9 +34,13 @@ public class Timer : MonoBehaviour
     public void Finish()
     {
         started = false;
-        if((m_time >= timeStart) && (timeStart > 0))  
+        if((m_time >= timeStart) && (timeStart > 0) && (SceneManager.GetActiveScene ().buildIndex == 1)) 
         {
-            PlayerPrefs.SetFloat(levelNum, timeStart);
+            PlayerPrefs.SetFloat("1", timeStart);
+        }
+        if ((m_time >= timeStart) && (timeStart > 0) && (SceneManager.GetActiveScene ().buildIndex == 2))
+        {
+            PlayerPrefs.SetFloat("2", timeStart);
         }
         IngameOverlay.SetActive(false);
         FinishScreen.SetActive(true);
@@ -50,8 +54,15 @@ public class Timer : MonoBehaviour
 
     void SetText()
     {
-        levelNum = SceneManager.GetActiveScene().buildIndex.ToString("10");
-        m_time = PlayerPrefs.GetFloat(levelNum, 0);
+        if (SceneManager.GetActiveScene ().buildIndex == 1)
+        {
+            m_time = PlayerPrefs.GetFloat("1", 0);
+        }
+        else
+        if (SceneManager.GetActiveScene ().buildIndex == 2)
+        {
+            m_time = PlayerPrefs.GetFloat("2", 0);
+        }
     }
 
     public void Pause()
