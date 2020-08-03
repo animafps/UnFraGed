@@ -16,7 +16,7 @@ public class PlayMenu : MonoBehaviour
 
     void Update()
     {
-        level1Time.text = "Fastest Time:" + level1.ToString("F2");
+        level1Time.text = "Fastest Time: " + level1.ToString("F2");
     }
 
     public void PlayGame ()
@@ -26,6 +26,6 @@ public class PlayMenu : MonoBehaviour
 
     void SetText()
     {
-        level1 = PlayerPrefs.GetFloat("1", 0);
+        level1 = PlayerPrefs.GetFloat("Level 1", 0);
     }
 }

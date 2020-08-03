@@ -14,7 +14,6 @@ public class Timer : MonoBehaviour
     public TMP_Text fastTime;
     public GameObject IngameOverlay;
     public GameObject FinishScreen;
-    string levelNum;
 
     void Start()
     {
@@ -34,13 +33,13 @@ public class Timer : MonoBehaviour
     public void Finish()
     {
         started = false;
-        if((m_time >= timeStart) && (timeStart > 0) && (SceneManager.GetActiveScene ().buildIndex == 1)) 
+        if((m_time > timeStart) && (timeStart > 0) && (SceneManager.GetActiveScene ().buildIndex == 1)) 
         {
-            PlayerPrefs.SetFloat("1", timeStart);
+            PlayerPrefs.SetFloat("Level 1", timeStart);
         }
-        if ((m_time >= timeStart) && (timeStart > 0) && (SceneManager.GetActiveScene ().buildIndex == 2))
+        if ((m_time > timeStart) && (timeStart > 0) && (SceneManager.GetActiveScene ().buildIndex == 2))
         {
-            PlayerPrefs.SetFloat("2", timeStart);
+            PlayerPrefs.SetFloat("Level 2", timeStart);
         }
         IngameOverlay.SetActive(false);
         FinishScreen.SetActive(true);
@@ -56,12 +55,12 @@ public class Timer : MonoBehaviour
     {
         if (SceneManager.GetActiveScene ().buildIndex == 1)
         {
-            m_time = PlayerPrefs.GetFloat("1", 0);
+            m_time = PlayerPrefs.GetFloat("Level 1", 0);
         }
         else
         if (SceneManager.GetActiveScene ().buildIndex == 2)
         {
-            m_time = PlayerPrefs.GetFloat("2", 0);
+            m_time = PlayerPrefs.GetFloat("Level 2", 0);
         }
     }
 
