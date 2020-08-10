@@ -13,10 +13,9 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        rfloat = PlayerPrefs.GetFloat("Sensitivity");
+        rfloat = PlayerPrefs.GetFloat("Sensitivity", 30);
         rstring = rfloat.ToString("F2");
         sensInputBox.text = rstring;
-
     }
 
     public void sensChange ()
