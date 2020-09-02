@@ -17,21 +17,21 @@ public class pauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown("escape")) && (GetComponent<CPMPlayer>().enabled))
+        if ((Input.GetKeyDown("escape")) && (GetComponent<CPMPlayer>().enabled)) // When escape key is pressed then check if the movement script is enabled
         {
-            if (timer.started)
+            if (timer.started) // If they crossed the start line
             {
-                GameObject.Find("_Player").SendMessage("Pause");
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-                IngameOverlay.SetActive(false);
+                GameObject.Find("_Player").SendMessage("Pause"); // Stop the timer
+                Cursor.visible = true; // Un-Hide the cursor
+                Cursor.lockState = CursorLockMode.None; 
+                IngameOverlay.SetActive(false); // Change overlays
                 PauseOverlay.SetActive(true);
-                GetComponent<CPMPlayer>().enabled = false;
-                didstart = true;
+                GetComponent<CPMPlayer>().enabled = false; // Disable movement script
+                didstart = true; // Change Bool value to not restart timer
             }
-            else
+            else // If didnt start 
             {
-                Cursor.visible = true;
+                Cursor.visible = true; 
                 Cursor.lockState = CursorLockMode.None;
                 IngameOverlay.SetActive(false);
                 PauseOverlay.SetActive(true);
@@ -41,7 +41,7 @@ public class pauseMenu : MonoBehaviour
         }
         else if (Input.GetKeyDown("escape"))
         {
-            exitMenu();
+            exitMenu(); 
         }
     }
 
@@ -52,9 +52,9 @@ public class pauseMenu : MonoBehaviour
 
     public void exitMenu()
     {
-        if (didstart)
+        if (didstart) // Checks the bool value if they crossed the line
         {
-            GameObject.Find("_Player").SendMessage("Begin");
+            GameObject.Find("_Player").SendMessage("Begin"); // Start timer again
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             IngameOverlay.SetActive(true);
