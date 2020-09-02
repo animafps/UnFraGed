@@ -68,4 +68,9 @@ public class Timer : MonoBehaviour
     {
         started = false;
     }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

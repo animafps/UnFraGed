@@ -63,7 +63,11 @@ public class CPMPlayer : MonoBehaviour
     private Cmd _cmd;
 
     private void Start()
-    {
+    { 
+        // Setting low latency video settings
+        Application.targetFrameRate = -1; 
+        QualitySettings.vSyncCount = 0;
+
         xMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f);
         yMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f);
         // Hide the cursor 
