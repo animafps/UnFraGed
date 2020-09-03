@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class Settings : MonoBehaviour
 {
     public TMP_InputField sensInputBox;
-    public TMP_Text placeholder;
     float rfloat;
     string rstring;
 

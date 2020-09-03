@@ -64,7 +64,7 @@ public class pauseMenu : MonoBehaviour
         }
         else
         {
-            Cursor.visible = false;
+            Cursor.visible = false; // Dont Start Timer
             Cursor.lockState = CursorLockMode.Locked;
             IngameOverlay.SetActive(true);
             PauseOverlay.SetActive(false);

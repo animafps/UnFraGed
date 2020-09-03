@@ -11,11 +11,4 @@ public class finish : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-    
-    public void NextLevel()
-    {
-        SceneManager.LoadScene("MainMenu");
-        Debug.Log("Next Level");
-    }
-
 }
