@@ -64,11 +64,8 @@ public class CPMPlayer : MonoBehaviour
 
     private void Start()
     { 
-        // Setting low latency video settings
-        Application.targetFrameRate = -1; 
-        QualitySettings.vSyncCount = 0;
 
-        xMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f);
+        xMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f); // Get the players sens prefrence from the settings
         yMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f);
         // Hide the cursor 
         Cursor.visible = false;
@@ -146,7 +143,7 @@ public class CPMPlayer : MonoBehaviour
             transform.position.z);
     }
 
-     /*******************************************************************************************************\
+    /*******************************************************************************************************\
     |* MOVEMENT
     \*******************************************************************************************************/
 
@@ -327,7 +324,7 @@ public class CPMPlayer : MonoBehaviour
         playerVelocity.x *= newspeed;
         playerVelocity.z *= newspeed;
     }
-
+    /* Ground and Air Acceleration */
     private void Accelerate(Vector3 wishdir, float wishspeed, float accel)
     {
         float addspeed;
@@ -342,15 +339,16 @@ public class CPMPlayer : MonoBehaviour
         if(accelspeed > addspeed)
             accelspeed = addspeed;
 
-        playerVelocity.x += accelspeed * wishdir.x;
+        playerVelocity.x += accelspeed * wishdir.x; // Add the acceleration when the player wishes to move
         playerVelocity.z += accelspeed * wishdir.z;
     }
-
+    /* User Interface elements */
     private void OnGUI()
     {
+        GUI.Label(new Rect(0, 0, 400, 100), "FPS: " + fps, style);
         var ups = _controller.velocity;
         ups.y = 0;
-        GUI.Label(new Rect(0, 15, 400, 100), "Speed: " + Mathf.Round(ups.magnitude * 100) / 100 + "ups", style);
-        GUI.Label(new Rect(0, 0, 400, 100), "Top Speed: " + Mathf.Round(playerTopVelocity * 100) / 100 + "ups", style);
+        GUI.Label(new Rect(0, 35, 400, 100), "Speed: " + Mathf.Round(ups.magnitude * 100) / 100 + "ups", style);
+        GUI.Label(new Rect(0, 15, 400, 100), "Top Speed: " + Mathf.Round(playerTopVelocity * 100) / 100 + "ups", style);
     }
 }
