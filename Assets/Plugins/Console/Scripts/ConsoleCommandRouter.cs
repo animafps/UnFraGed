@@ -15,7 +15,6 @@ public class ConsoleCommandRouter : MonoBehaviour {
         repo.RegisterCommand("shadows", Shadows);
         repo.RegisterCommand("preset", QualityPreset);
         repo.RegisterCommand("presets", GetPresets);
-        repo.RegisterCommand("fullscree", FullscreenMode);
     }
 
     public string Load(params string[] args) {
@@ -80,19 +79,5 @@ public class ConsoleCommandRouter : MonoBehaviour {
     public string GetPresets(params string[] args)
     {
         return "Current Quality Presets avaliable: " + QualitySettings.names;
-    }
-
-    public string FullscreenMode(params string[] args)
-    {
-        var fullscreenmode = args[0];
-        if(fullscreenmode == "fullscreen")
-        {
-            FullScreenMode.ExclusiveFullScreen;
-        }
-        if(fullscreenmode == "windowed")
-        {
-            FullScreenMode.FullScreenWindow;
-        }
-        return "Changed Fullscreen Mode to: " + fullscreenmode;
     }
 }

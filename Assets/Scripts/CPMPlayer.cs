@@ -63,8 +63,8 @@ public class CPMPlayer : MonoBehaviour
     private Cmd _cmd;
 
     private void Start()
-    { 
-
+    {
+        QualitySettings.vSyncCount = 1;
         xMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f); // Get the players sens prefrence from the settings
         yMouseSensitivity = PlayerPrefs.GetFloat("Sensitivity", 30.0f);
         // Hide the cursor 
