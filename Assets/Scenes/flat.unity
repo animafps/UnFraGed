@@ -1898,17 +1898,17 @@ MonoBehaviour:
   xMouseSensitivity: 0
   yMouseSensitivity: 0
   gravity: 20
-  friction: 6
+  friction: 7
   moveSpeed: 7
   runAcceleration: 14
   runDeacceleration: 10
   airAcceleration: 2
   airDecceleration: 2
-  airControl: 0.3
+  airControl: 1
   sideStrafeAcceleration: 50
   sideStrafeSpeed: 1
   jumpSpeed: 8
-  holdJumpToBhop: 1
+  holdJumpToBhop: 0
   style:
     m_Name: 
     m_Normal:

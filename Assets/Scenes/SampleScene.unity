@@ -844,7 +844,7 @@ MonoBehaviour:
   sideStrafeAcceleration: 50
   sideStrafeSpeed: 1
   jumpSpeed: 8
-  holdJumpToBhop: 1
+  holdJumpToBhop: 0
   style:
     m_Name: 
     m_Normal:
